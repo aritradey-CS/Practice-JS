@@ -11,17 +11,17 @@ console.log(sayHello());    // Output: "Hello word"
 //-------------------------------------------------------------------------------------------------
 // Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
 
-function createCounter(n) {
-    return () => n++;
-}
+// function createCounter(n) {
+//     return () => n++;
+// }
 
-//Create a counter starting from 5
-const myCounter = createCounter(5);
+// //Create a counter starting from 5
+// const myCounter = createCounter(5);
 
-// Call the counter function multiple times to see the values increment
-console.log(myCounter());   //Output: 5
-console.log(myCounter());   //Output: 6
-console.log(myCounter());   //Output: 7
+// // Call the counter function multiple times to see the values increment
+// console.log(myCounter());   //Output: 5
+// console.log(myCounter());   //Output: 6
+// console.log(myCounter());   //Output: 7
 
 
 
@@ -79,14 +79,12 @@ function createCounter(init) {
         }
     };
 }
+// Example usage:
+const counter = createCounter(0);
 
-//Example usage:
-const myCounter = createCounter(0);
-
-console.log(myCounter.increment());   //Output: 2
-console.log(myCounter.increment());   //Output: 1
-console.log(myCounter.increment());   //Output: 3
-console.log(myCounter.decrement());   //Output: 2
-console.log(myCounter.reset());       //Output: 0 
-
+console.log(counter.increment());   // Output: 1
+console.log(counter.increment());   // Output: 2
+console.log(counter.increment());   // Output: 3
+console.log(counter.decrement());   // Output: 2
+console.log(counter.reset());       // Output: 0
 
