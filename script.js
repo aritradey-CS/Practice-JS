@@ -61,3 +61,16 @@ function addNumber(a,b) {
 // Call the function with arguments
 var result = addNumber(5,3);
 console.log("Sum:", result); // Output
+
+// ________________________________________________________________
+// Create an object
+var person = {
+    firstName : "Aritra",
+    lastName: "Dey",
+age: 24,
+};
+
+
+// Access object properties
+console.log("Name:", person.firstName, person.lastName);
+console.log("age:", person.age);
