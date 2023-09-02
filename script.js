@@ -51,3 +51,13 @@ while (count > 0) {
     console.log(count);
     count--;
 }
+
+// ________________________________________________________________
+// Define a function with parameters
+function addNumber(a,b) {
+    return a+b;
+}
+
+// Call the function with arguments
+var result = addNumber(5,3);
+console.log("Sum:", result); // Output
