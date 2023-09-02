@@ -74,3 +74,11 @@ age: 24,
 // Access object properties
 console.log("Name:", person.firstName, person.lastName);
 console.log("age:", person.age);
+
+// ________________________________________________________________
+// Use setTimeout to delay execution
+console.log("Start");
+setTimeout(function() {
+    console.log("Delayed message");
+},2000); //Delay for 2 second
+console.log("End");
