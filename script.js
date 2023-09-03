@@ -44,3 +44,10 @@ if (age >= 18) {
 for (var i = 1; i <=10; i++) {
     console.log(i);
 }
+
+// Use a while loop to count from 10 to 1
+var count = 10;
+while (count > 0) {
+    console.log(count);
+    count--;
+}
