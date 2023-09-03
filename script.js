@@ -19,3 +19,7 @@ console.log(fruits[0]);
 fruits.push("cherry");
 console.log(fruits);
 
+// Loop through the array
+for (var i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
