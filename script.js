@@ -9,6 +9,8 @@ function sayHello() {
 // Call a function
 sayHello();
 
+
+// ________________________________________________________________
 // create an array
 var fruits = ["apple", "orange", "Banana"];
 
@@ -22,4 +24,16 @@ console.log(fruits);
 // Loop through the array
 for (var i = 0; i < fruits.length; i++) {
     console.log(fruits[i]);
+}
+
+
+// ________________________________________________________________
+// Declare a variable
+var age = 28;
+
+// Use an if statement
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
 }
