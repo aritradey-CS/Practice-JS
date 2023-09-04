@@ -123,3 +123,114 @@ function isEmpty(obj) {
   console.log(isEmpty({})); // Output: true
   console.log(isEmpty([null, false, 0])); // Output: false
   
+
+
+//-------------------------------------------------------------------------------------------------
+// Write code that enhances all arrays such that you can call the array.last() method on any array and it will return the last element. If there are no elements in the array, it should return -1.
+// You may assume the array is the output of JSON.parse.
+
+// Define the last method on Array.prototype
+
+Array.prototype.last = function() {
+    if (this.length === 0) {
+      return -1; // Return -1 for an empty array
+    } else {
+      return this[this.length - 1]; // Return the last element for non-empty arrays
+    }
+  };
+  
+  // Example usage:
+  const nums1 = [null, {}, 3];
+  console.log(nums1.last()); // Output: 3
+  
+  const nums2 = [];
+  console.log(nums2.last()); // Output: -1
+  
+
+
+
+//-------------------------------------------------------------------------------------------------
+// Create a class ArrayWrapper that accepts an array of integers in its constructor. This class should have two features:
+// When two instances of this class are added together with the + operator, the resulting value is the sum of all the elements in both arrays.
+// When the String() function is called on the instance, it will return a comma separated string surrounded by brackets. For example, [1,2,3].
+
+class ArrayWrapper {
+    constructor(arr) {
+      this.arr = arr;
+    }
+  
+    // Define the addition operator for two ArrayWrapper instances
+    add(other) {
+      if (other instanceof ArrayWrapper) {
+        const combinedArray = this.arr.concat(other.arr);
+        return combinedArray.reduce((sum, num) => sum + num, 0);
+      } else {
+        throw new Error("Unsupported operation");
+      }
+    }
+  
+    // Define the String() function to return a formatted string
+    toString() {
+      return "[" + this.arr.join(",") + "]";
+    }
+  }
+  
+  // Example usage:
+  const nums1 = new ArrayWrapper[[1, 2]];
+  const nums2 = new ArrayWrapper[[3, 4]];
+  
+  const operation = "Add"; // or "String"
+  
+  if (operation === "Add") {
+    const result = nums1.add(nums2);
+    console.log(result); // Output: 10
+  } else if (operation === "String") {
+    const result = String(nums1);
+    console.log(result); // Output: "[1,2]"
+  }
+  
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------
+// Sign of the Product of an Array
+// There is a function signFunc(x) that returns:
+// 1 if x is positive.
+// -1 if x is negative.
+// 0 if x is equal to 0.
+// You are given an integer array nums. Let product be the product of all values in the array nums.
+// Return signFunc(product).
+
+ 
+
+  function signFunc(nums) {
+    let countNegatives = 0;
+    let hasZero = false;
+  
+    for (const num of nums) {
+      if (num < 0) {
+        countNegatives++;
+      } else if (num === 0) {
+        hasZero = true;
+      }
+    }
+  
+    if (hasZero) {
+      return 0;
+    }
+  
+    return countNegatives % 2 === 0 ? 1 : -1;
+  }
+  
+  // Example usage:
+  const nums1 = [-1, -2, -3, -4, 3, 2, 1];
+  console.log(signFunc(nums1)); // Output: 1
+  
+  const nums2 = [1, 5, 0, 2, -3];
+  console.log(signFunc(nums2)); // Output: 0
+  
+  const nums3 = [-1, 1, -1, 1, -1];
+  console.log(signFunc(nums3)); // Output: -1
+  
