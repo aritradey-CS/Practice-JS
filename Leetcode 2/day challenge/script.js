@@ -30,30 +30,28 @@ console.log(myCounter());   //Output: 7
 //toBe(val) accepts another value and returns true if the two values === each other. If they are not equal, it should throw an error "Not Equal".
 //notToBe(val) accepts another value and returns true if the two values !== each other. If they are equal, it should throw an error "Equal".
 
-function expect(value) {
+function expect(val) {
     return {
-        toBe: function (expected){
-            if (value === expected) {
+        toBe: function (expected) {
+            if (val === expected) {
                 return { value: true };
-            }else {
+            } else {
                 throw new Error("Not Equal");
             }
         },
-        notToBe: function(expected){
-            if (value !== expected) {
-                return value !== expected;
-
+        notToBe: function (expected) {
+            if (val !== expected) {
+                return { value: true };
+            } else {
+                throw new Error("Equal");
             }
-        }
+        },
     };
 }
 
 // Example usage:
+const result1 = expect(5).toBe(5);         // {"value":true}
+const result2 = expect("hello").notToBe("world"); // {"value":true}
 
-const result1 = expect(5).toBe(5);      //true because 5 === 5
-const result2 = expect("hello").notToBe("world");   //true because "hello" !== "world"
-const result3 = expect(5).toBe(null);      //true because 5 === 5
-
-console.log(result1);
-console.log(result2);
-console.log(result3);
+console.log(JSON.stringify(result1)); // {"value":true}
+console.log(JSON.stringify(result2)); // {"value":true}
