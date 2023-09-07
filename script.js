@@ -95,9 +95,9 @@ numbers.forEach((number) => {
 // ________________________________________________________________
 // Using do-while in JavaScript
 
-let count = 0;
+let counter = 0;
 
 do {
     console.log("This will run at least onces");
-    count++;
-} while (count<3);
+    counter++;
+} while (counter < 10);
