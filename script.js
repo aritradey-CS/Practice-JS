@@ -82,3 +82,12 @@ setTimeout(function() {
     console.log("Delayed message");
 },2000); //Delay for 2 second
 console.log("End");
+
+// ________________________________________________________________
+// Using forEach in JavaScript
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+numbers.forEach((number) => {
+    console.log(number);
+});
