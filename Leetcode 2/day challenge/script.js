@@ -53,3 +53,40 @@ function expect(val) {
 const result1 = expect(5).toBe(5);         // {"value":true}
 const result2 = expect("hello").notToBe("world"); // {"value":true}
 
+
+
+
+//-------------------------------------------------------------------------------------------------
+//Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+//The three functions are:
+//increment() increases the current value by 1 and then returns it.
+//decrement() reduces the current value by 1 and then returns it.
+//reset() sets the current value to init and then returns it.
+
+function createCounter(init) {
+    let count = init;
+
+    return {
+        increment(){
+            return ++count;
+        },
+        decrement(){
+            return --count;
+        },
+        reset(){
+            count = init;
+            return count;
+        }
+    };
+}
+
+//Example usage:
+const myCounter = createCounter(0);
+
+console.log(myCounter.increment());   //Output: 2
+console.log(myCounter.increment());   //Output: 1
+console.log(myCounter.increment());   //Output: 3
+console.log(myCounter.decrement());   //Output: 2
+console.log(myCounter.reset());       //Output: 0 
+
+
