@@ -33,10 +33,17 @@ console.log(myCounter());   //Output: 7
 function expect(value) {
     return {
         toBe: function (expected){
-            return value === expected;
+            if (value === expected) {
+                return { value: true };
+            }else {
+                throw new Error("Not Equal");
+            }
         },
         notToBe: function(expected){
-            return value !== expected;
+            if (value !== expected) {
+                return value !== expected;
+
+            }
         }
     };
 }
