@@ -34,14 +34,14 @@ function expect(val) {
     return {
         toBe: function (expected) {
             if (val === expected) {
-                return { value: true };
+                return (true);
             } else {
                 throw new Error("Not Equal");
             }
         },
         notToBe: function (expected) {
             if (val !== expected) {
-                return { value: true };
+                return (true);
             } else {
                 throw new Error("Equal");
             }
@@ -53,5 +53,3 @@ function expect(val) {
 const result1 = expect(5).toBe(5);         // {"value":true}
 const result2 = expect("hello").notToBe("world"); // {"value":true}
 
-console.log(JSON.stringify(result1)); // {"value":true}
-console.log(JSON.stringify(result2)); // {"value":true}
