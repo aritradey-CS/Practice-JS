@@ -101,3 +101,15 @@ do {
     console.log("This will run at least onces");
     counter++;
 } while (counter < 10);
+
+// ________________________________________________________________
+// Using for...in
+
+const people = {
+firstName: "Aritra",
+    lastName: "Dey",
+    age: 24,
+}
+
+for (const key in people)
+console.log(key, people[key]);
