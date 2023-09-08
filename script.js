@@ -111,9 +111,8 @@ firstName: "Aritra",
     age: 24,
 }
 for (var key in people) {
-    console.log(key);
-};
+    // console.log(key);
+    // console.log(people [key]);
+    console.log(key, people[key]);
 
-// for (const key in people)
-// console.log(key, people[key]);
-// console.log(key, people[key]);
+};
