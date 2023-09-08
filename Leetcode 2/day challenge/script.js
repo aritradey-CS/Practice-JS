@@ -88,3 +88,16 @@ console.log(counter.increment());   // Output: 3
 console.log(counter.decrement());   // Output: 2
 console.log(counter.reset());       // Output: 0
 
+
+
+//-------------------------------------------------------------------------------------------------
+// Write a function argumentsLength that returns the count of arguments passed to it.
+
+function argumentsLength() {
+    return arguments.length;
+  }
+  
+  // Example usage:
+  console.log(argumentsLength(5)); // Output: 1
+  console.log(argumentsLength(1, 2, 3, 'a', 'b')); // Output: 5
+  
