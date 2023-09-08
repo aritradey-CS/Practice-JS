@@ -116,3 +116,10 @@ for (var key in people) {
     console.log(key, people[key]);
 
 };
+// ________________________________________________________________
+// Using setTimeout (Asynchronous JavaScript)
+
+setTimeout(function (){
+    console.log("You weasted 3 second of time")
+      
+},3000);
