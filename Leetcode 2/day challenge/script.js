@@ -100,4 +100,26 @@ function argumentsLength() {
   // Example usage:
   console.log(argumentsLength(5)); // Output: 1
   console.log(argumentsLength(1, 2, 3, 'a', 'b')); // Output: 5
+
+  
+
+//-------------------------------------------------------------------------------------------------
+//Given an object or an array, return if it is empty.
+// An empty object contains no key-value pairs.
+// An empty array contains no elements.
+// You may assume the object or array is the output of JSON.parse.
+
+function isEmpty(obj) {
+    if (Array.isArray(obj)) {
+      return obj.length === 0;
+    } else if (typeof obj === 'object' && obj !== null) {
+      return Object.keys(obj).length === 0;
+    }
+    return false;
+  }
+  
+  // Example usage:
+  console.log(isEmpty({"x": 5, "y": 42})); // Output: false
+  console.log(isEmpty({})); // Output: true
+  console.log(isEmpty([null, false, 0])); // Output: false
   
