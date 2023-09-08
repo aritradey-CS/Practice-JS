@@ -105,11 +105,15 @@ do {
 // ________________________________________________________________
 // Using for...in
 
-const people = {
+var people = {
 firstName: "Aritra",
     lastName: "Dey",
     age: 24,
 }
+for (var key in people) {
+    console.log(key);
+};
 
-for (const key in people)
-console.log(key, people[key]);
+// for (const key in people)
+// console.log(key, people[key]);
+// console.log(key, people[key]);
