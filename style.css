@@ -10,3 +10,10 @@ body {
     text-align: center;
     font-size: xx-large;
 }
+.content{
+    background-color: rgb(118, 224, 171);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size:medium;
+}
