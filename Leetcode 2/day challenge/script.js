@@ -323,15 +323,26 @@ function customFilter(arr, fn) {
   return filteredArr;
 }
 
-// Example:
-const arr = [1, 2, 3, 4, 5];
-
-// Define a filtering function
-function filterFn(element, index) {
-  // Filter out even numbers or elements at even indices
-  return element % 2 !== 0 && index % 2 === 0;
+// Example 1:
+const arr1 = [0, 10, 20, 30];
+function greaterThan10(n) {
+  return n > 10;
 }
+const filteredArr1 = customFilter(arr1, greaterThan10);
+console.log(filteredArr1); // Output: [20, 30]
 
-// Use the custom filter function
-const filteredArr = customFilter(arr, filterFn);
-console.log(filteredArr); // Output: [1, 3, 5]
+// Example 2:
+const arr2 = [1, 2, 3];
+function firstIndex(n, i) {
+  return i === 0;
+}
+const filteredArr2 = customFilter(arr2, firstIndex);
+console.log(filteredArr2); // Output: [1]
+
+// Example 3:
+const arr3 = [-2, -1, 0, 1, 2];
+function plusOne(n) {
+  return n + 1;
+}
+const filteredArr3 = customFilter(arr3, plusOne);
+console.log(filteredArr3); // Output: [-2, 0, 1, 2]
