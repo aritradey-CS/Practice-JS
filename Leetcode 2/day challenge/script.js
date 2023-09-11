@@ -205,32 +205,26 @@ class ArrayWrapper {
 
  
 
-  function signFunc(nums) {
-    let countNegatives = 0;
-    let hasZero = false;
-  
-    for (const num of nums) {
-      if (num < 0) {
-        countNegatives++;
-      } else if (num === 0) {
-        hasZero = true;
-      }
-    }
-  
-    if (hasZero) {
+  // Define the signFunc function
+function signFunc(x) {
+    if (x > 0) {
+      return 1;
+    } else if (x < 0) {
+      return -1;
+    } else {
       return 0;
     }
-  
-    return countNegatives % 2 === 0 ? 1 : -1;
   }
   
-  // Example usage:
-  const nums1 = [-1, -2, -3, -4, 3, 2, 1];
-  console.log(signFunc(nums1)); // Output: 1
-  
-  const nums2 = [1, 5, 0, 2, -3];
-  console.log(signFunc(nums2)); // Output: 0
-  
-  const nums3 = [-1, 1, -1, 1, -1];
-  console.log(signFunc(nums3)); // Output: -1
+  // Define the function that returns the sign of the product of an array
+  function arraySign(nums) {
+    // Initialize the product to 1
+    let product = 1;
+    // Loop through the array and multiply the product by each element
+    for (let num of nums) {
+      product *= num;
+    }
+    // Return the sign of the product
+    return signFunc(product);
+  }
   
