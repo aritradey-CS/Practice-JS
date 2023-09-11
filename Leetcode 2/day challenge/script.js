@@ -236,21 +236,102 @@
 // The returned array should be created such that returnedArray[i] = fn(arr[i], i).
 // Please solve it without the built-in Array.map method.
 
-function mapWithIndex(arr, fn) {
-  const result = [];
+// function map(arr, fn) {
+//   const result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     result.push(fn(arr[i], i));
+//   }
+//   return result;
+// }
+
+// // Example 1:
+// const arr1 = [1, 2, 3];
+// function plusOne(n) {
+//   return n + 1;
+// }
+// const output1 = map(arr1, plusOne);
+// console.log(output1); // Output: [2, 3, 4]
+
+// // Example 2:
+// const arr2 = [1, 2, 3];
+// function plusI(n, i) {
+//   return n + i;
+// }
+// const output2 = map(arr2, plusI);
+// console.log(output2); // Output: [1, 3, 5]
+
+// // Example 3:
+// const arr3 = [10, 20, 30];
+// function constant() {
+//   return 42;
+// }
+// const output3 = map(arr3, constant);
+// console.log(output3); // Output: [42, 42, 42]
+
+// // ------------------------------------------------------------------------------
+// function map(arr, fn) {
+//   const result = new Array(arr.length);
+//   for (let i = 0; i < arr.length; i++) {
+//     result[i] = fn(arr[i], i);
+//   }
+//   return result;
+// }
+
+// // Example 1:
+// const arr1 = [1, 2, 3];
+// function plusOne(n) {
+//   return n + 1;
+// }
+// const output1 = map(arr1, plusOne);
+// console.log(output1); // Output: [2, 3, 4]
+
+// // Example 2:
+// const arr2 = [1, 2, 3];
+// function plusI(n, i) {
+//   return n + i;
+// }
+// const output2 = map(arr2, plusI);
+// console.log(output2); // Output: [1, 3, 5]
+
+// // Example 3:
+// const arr3 = [10, 20, 30];
+// function constant() {
+//   return 42;
+// }
+// const output3 = map(arr3, constant);
+// console.log(output3); // Output: [42, 42, 42]
+
+
+// Given an integer array arr and a filtering function fn, return a filtered array filteredArr.
+// The fn function takes one or two arguments:
+// arr[i] - number from the arr
+// i - index of arr[i]
+// filteredArr should only contain the elements from the arr for which the expression fn(arr[i], i) evaluates to a truthy value. A truthy value is a value where Boolean(value) returns true.
+// Please solve it without the built-in Array.filter method.
+
+
+
+function customFilter(arr, fn) {
+  const filteredArr = [];
+
   for (let i = 0; i < arr.length; i++) {
-    result.push(fn(arr[i], i));
+    if (fn(arr[i], i)) {
+      filteredArr.push(arr[i]);
+    }
   }
-  return result;
+
+  return filteredArr;
 }
 
-// Example usage:
-const originalArray = [1, 2, 3, 4, 5];
+// Example:
+const arr = [1, 2, 3, 4, 5];
 
-// Define a mapping function that squares the element and adds its index
-function mappingFunction(element, index) {
-  return element * element + index;
+// Define a filtering function
+function filterFn(element, index) {
+  // Filter out even numbers or elements at even indices
+  return element % 2 !== 0 && index % 2 === 0;
 }
 
-const transformedArray = mapWithIndex(originalArray, mappingFunction);
-console.log(transformedArray); // Output: [1, 5, 11, 21, 35]
+// Use the custom filter function
+const filteredArr = customFilter(arr, filterFn);
+console.log(filteredArr); // Output: [1, 3, 5]
