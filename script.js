@@ -127,18 +127,24 @@
 // // ________________________________________________________________
 
 var bulb = document.querySelector("#bulb")
-var button = document.querySelector("Button")
+var btn = document.querySelector("Button")
 var flag = 0
 
 btn.addEventListener("click", function () {
     if (flag == 0) {
+        var sound = new Audio("https://www.soundjay.com/misc/sounds/small-bell-ring-01a.mp3");
+        sound.play();
         bulb.style.backgroundColor = "yellow"
         console.log("clicked")
-            flag = 1
-    
-    }else {
-        bulb.style.backgroundColor = "transparent"
+        flag = 1
+
+    } else {
+        var sound = new Audio("https://www.soundjay.com/misc/sounds/small-bell-ring-01a.mp3");
+        sound.play();
+        bulb.style.backgroundColor = "white"
         console.log("Again clicked")
-            flag = 0
-}
+        flag = 0
+    }
 })
+document.getElementsByTagName("button")
+[0].addEventListener("click", ding);
