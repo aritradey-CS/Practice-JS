@@ -11,3 +11,8 @@
     font-weight: 300;
     background-color: blueviolet;
 }
+
+#bulb{
+    border-radius: 60%;
+    background-color: yellowgreen;
+}
